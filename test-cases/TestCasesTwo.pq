@@ -8,6 +8,7 @@ let
             jsonDoc = Json.Document(content),
             cases = jsonDoc[cases],
             TestData = Table.FromList(cases, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+            // Two
             TestSuits = Table.ExpandRecordColumn(
                 TestData, "Column1", {"description", "cases"}, {"description", "cases"}
             ),
